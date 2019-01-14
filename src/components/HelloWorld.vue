@@ -2,18 +2,14 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h3>Entrees</h3>
-    <br>
+    <br />
     <v-list subheader>
-        <v-list-tile
-        v-for="(item, index) in entrees"
-        :key="index"
-        avatar
-        >
-            <v-list-tile-content>
-                {{item.chef+ " made " + item.recipe}}}
-            </v-list-tile-content>
-            <br>
-        </v-list-tile>
+      <v-list-tile v-for="(item, index) in entrees" :key="index" avatar>
+        <v-list-tile-content>
+          {{ item.chef + " made " + item.recipe }}}
+        </v-list-tile-content>
+        <br />
+      </v-list-tile>
     </v-list>
   </div>
 </template>
@@ -25,19 +21,19 @@ export default {
         return {
             entrees: [
                 {
-                    chef: 'Pierre',
-                    recipe: 'Mashed Potatoes'
+                    chef: "Pierre",
+                    recipe: "Mashed Potatoes"
                 },
                 {
-                    chef: 'Luna',
-                    recipe: 'Lasagna'
+                    chef: "Luna",
+                    recipe: "Lasagna"
                 },
                 {
-                    chef: 'Max',
-                    recipe: 'Cheesecake'
-                },
+                    chef: "Max",
+                    recipe: "Cheesecake"
+                }
             ]
-        }
+        };
     },
     props: {
         msg: String
