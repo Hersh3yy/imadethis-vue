@@ -6,7 +6,7 @@
     <v-list subheader>
       <v-list-tile v-for="(item, index) in entrees" :key="index" avatar>
         <v-list-tile-content>
-          {{ item.chef + " made " + item.recipe }}
+          {{ item.chef + " made " + item.entree_name }}
         </v-list-tile-content>
         <br />
       </v-list-tile>
@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: "HelloWorld",
     data() {
@@ -22,21 +23,35 @@ export default {
             entrees: [
                 {
                     chef: "Pierre",
-                    recipe: "Mashed Potatoes"
+                    entree_name: "Mashed Potatoes"
                 },
                 {
                     chef: "Luna",
-                    recipe: "Lasagna"
+                    entree_name: "Lasagna"
                 },
                 {
                     chef: "Max",
-                    recipe: "Cheesecake"
+                    entree_name: "Cheesecake"
                 }
             ]
         };
     },
     props: {
         msg: String
+    },
+    mounted() {
+        this.getEntrees();
+    },
+    methods: {
+        getEntrees() {
+            axios.get('http://localhost:8000/entrees')
+            .then(response => {
+                this.entrees = response.data;
+            })
+            .catch(e => {
+                console.error(e);
+            });
+        }
     }
 };
 </script>

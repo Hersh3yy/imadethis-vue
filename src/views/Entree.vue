@@ -64,16 +64,19 @@ export default {
             }
         },
         postEntree () {
-            data = {
+            let data = {
                 recipe_id: this.recipeId,
                 entree_name: this.entreeName,
                 chef: this.chef,
                 image: this.entreeImage,
                 notes: this.notes,
             };
-            axios.post('localhost:8080/entrees', data).then(result => {
-                console.log(result);
-            })            
+            axios.post('http://localhost:8000/entrees', data)
+            .then(response => {
+                console.log(response)
+            }).catch(e => {
+                console.error(e);
+            });
         }
     },
     watch: {
