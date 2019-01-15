@@ -6,7 +6,7 @@
     <v-list subheader>
       <v-list-tile v-for="(item, index) in entrees" :key="index" avatar>
         <v-list-tile-content>
-          {{ item.chef + " made " + item.recipe }}}
+          {{ item.chef + " made " + item.recipe }}
         </v-list-tile-content>
         <br />
       </v-list-tile>
