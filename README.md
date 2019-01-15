@@ -1,5 +1,13 @@
 # imadethis-vue
 
+This is the frontend for imadethis, which is a recipe logging app. The backend is made with node.js. 
+See: https://github.com/Hersh3yy/imadethis-nodejs
+
+
+### Intended wireframe
+![wireframe](public/recipes_wireframe.png)
+
+
 ## Project setup
 ```
 yarn install
@@ -24,6 +32,3 @@ yarn run test
 ```
 yarn run lint
 ```
-
-### Intended wireframe
-![wireframe](public/recipes_wireframe.png)
